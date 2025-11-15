@@ -1,7 +1,7 @@
 package app;
 import data.Barang;
 
-public class MainApp {
+public class Main {
     public static void main(String[] args) {
         // Membuat beberapa objek Barang
         Barang b1 = new Barang("Router WiFi", 350000, 5);
