@@ -12,11 +12,14 @@ public class Main {
         Barang b4 = new Barang("Medkit", 20000, 12, "FreeFire", 500);
         Barang b5 = new Barang("Ayam Bakar", 14000, 100, "-", 140);
         Barang b6 = new Barang("Ikan Goreng", 17000, 120, "-", 250);
+        Barang b7 = new Barang("Headphones", 120000, 15, "Sony", 250);
+        Barang b8 = new Barang("Power Bank 10000mAh", 180000, 20, "Anker", 220);
+        Barang b9 = new Barang("Vitamin C 100s", 90000, 30, "Kalbe", 150);
+        Barang b10 = new Barang("Nasi Goreng Spesial", 20000, 50, "-", 300);
 
-        Barang[] Elektronik = { b1 ,b2 ,b3 };
-        Barang[] Kesehatan = { b4 };
-        Barang[] Makanan = { b5, b6 };
-
+        Barang[] Elektronik = { b1, b2, b3, b7, b8 };
+        Barang[] Kesehatan = { b4, b9 };
+        Barang[] Makanan = { b5, b6, b10 };
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Halo pelanggan setia toko Merdeka!, apa yang anda ingin lakukan?");
@@ -30,7 +33,6 @@ public class Main {
             System.out.println("Makanan (m)");
             String hasilInput2 = scanner.nextLine().trim();
             char pilihan = hasilInput2.isEmpty() ? ' ' : hasilInput2.charAt(0);
-
             if (pilihan == 'e') {
                 System.out.println("=== KATEGORI ELEKTRONIK ===");
                 for (Barang b : Elektronik) b.tampilkanData();
@@ -52,6 +54,10 @@ public class Main {
             b4.tampilkanData();
             b5.tampilkanData();
             b6.tampilkanData();
+            b7.tampilkanData();
+            b8.tampilkanData();
+            b9.tampilkanData();
+            b10.tampilkanData();
         } else {
             System.out.println("Input tidak dikenali. Ketik \"sort\" atau \"list\".");
         }
