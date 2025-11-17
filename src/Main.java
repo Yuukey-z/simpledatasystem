@@ -13,7 +13,7 @@ public class Main {
         Barang b5 = new Barang("Ayam Bakar", 14000, 100, "-", 140);
         Barang b6 = new Barang("Ikan Goreng", 17000, 120, "-", 250);
 
-        Barang[] Elektronik = { b1, ,b2 ,b3 };
+        Barang[] Elektronik = { b1 ,b2 ,b3 };
         Barang[] Kesehatan = { b4 };
         Barang[] Makanan = { b5, b6 };
 
