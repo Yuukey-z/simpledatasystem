@@ -22,10 +22,16 @@ public class Main {
         Barang[] Makanan = { b5, b6, b10 };
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Halo pelanggan setia toko Merdeka!, apa yang anda ingin lakukan?");
+        System.out.println("Halo, apa yang anda ingin lakukan?");
         System.out.println("lihat barang berdasarkan kategori (sort)");
         System.out.println("list barang (list)");
         String hasilInput = scanner.nextLine().trim();
+        while (!hasilInput.equalsIgnoreCase("sort")
+                && !hasilInput.equalsIgnoreCase("list")
+                && !hasilInput.isEmpty()) {
+            System.out.println("ERROR: Pilihan tidak dikenali. Silakan masukkan 'sort' atau 'list'.");
+            hasilInput = scanner.nextLine().trim();
+        }
         if (hasilInput.equalsIgnoreCase("sort")) {
             System.out.println("Kategori apa yang ingin anda lihat?");
             System.out.println("Elektronik (e)");
@@ -33,6 +39,11 @@ public class Main {
             System.out.println("Makanan (m)");
             String hasilInput2 = scanner.nextLine().trim();
             char pilihan = hasilInput2.isEmpty() ? ' ' : hasilInput2.charAt(0);
+            while (pilihan != 'e' && pilihan != 'k' && pilihan != 'm') {
+                System.out.println("ERROR: Pilihan tidak dikenali. Silakan masukkan 'e', 'k', atau 'm'.");
+                hasilInput2 = scanner.nextLine().trim();
+                pilihan = hasilInput2.isEmpty() ? ' ' : hasilInput2.charAt(0);
+            }
             if (pilihan == 'e') {
                 System.out.println("=== KATEGORI ELEKTRONIK ===");
                 for (Barang b : Elektronik) b.tampilkanData();
@@ -58,9 +69,27 @@ public class Main {
             b8.tampilkanData();
             b9.tampilkanData();
             b10.tampilkanData();
-        } else {
-            System.out.println("Input tidak dikenali. Ketik \"sort\" atau \"list\".");
         }
+        System.out.println("Apakah anda ingin menambah atau mengurangi stok barang? (y/n)");
+        String hasilInput3 = scanner.nextLine().trim();
+        if (hasilInput3.equalsIgnoreCase("y")) {
+            System.out.println("Ingin menambah atau mengurangi stok? (tambah/kurang)");
+            String hasilInput4 = scanner.nextLine().trim();
+            while (!hasilInput4.equalsIgnoreCase("tambah") && !hasilInput4.equalsIgnoreCase("kurang")) {
+                System.out.println("ERROR: Pilihan tidak dikenali. Silakan masukkan 'tambah' atau 'kurang'.");
+                hasilInput4 = scanner.nextLine().trim();
+            }
+            System.out.println("Masukkan nama barang:");
+            String namaBarang = scanner.nextLine().trim();
+            System.out.println("Masukkan jumlah stok:");
+
+            if (!barangDitemukan) {
+                System.out.println("ERROR: Barang dengan nama " + namaBarang + " tidak ditemukan.");
+            }
+        }  else {
+            System.out.println("Terima kasih telah menggunakan aplikasi kami!");
+        }
+
 
 
     }
