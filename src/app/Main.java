@@ -83,9 +83,7 @@ public class Main {
             String namaBarang = scanner.nextLine().trim();
             System.out.println("Masukkan jumlah stok:");
 
-            if (!barangDitemukan) {
-                System.out.println("ERROR: Barang dengan nama " + namaBarang + " tidak ditemukan.");
-            }
+
         }  else {
             System.out.println("Terima kasih telah menggunakan aplikasi kami!");
         }
