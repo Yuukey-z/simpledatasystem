@@ -79,7 +79,7 @@ public class Main {
                 System.out.println("ERROR: Pilihan tidak dikenali. Silakan masukkan 'tambah' atau 'kurang'.");
                 hasilInput4 = scanner.nextLine().trim();
             }
-            /*    System.out.println("Masukkan nama barang:");
+                System.out.println("Masukkan nama barang:");
             String namaBarang = scanner.nextLine().trim();
             System.out.println("Masukkan jumlah stok:");
 
