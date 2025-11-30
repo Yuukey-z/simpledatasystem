@@ -69,26 +69,26 @@ public class Main {
             b8.tampilkanData();
             b9.tampilkanData();
             b10.tampilkanData();
+
         }
-        System.out.println("Apakah anda ingin menambah atau mengurangi stok barang? (y/n)");
-        String hasilInput3 = scanner.nextLine().trim();
-        if (hasilInput3.equalsIgnoreCase("y")) {
-            System.out.println("Ingin menambah atau mengurangi stok? (tambah/kurang)");
-            String hasilInput4 = scanner.nextLine().trim();
-            while (!hasilInput4.equalsIgnoreCase("tambah") && !hasilInput4.equalsIgnoreCase("kurang")) {
-                System.out.println("ERROR: Pilihan tidak dikenali. Silakan masukkan 'tambah' atau 'kurang'.");
-                hasilInput4 = scanner.nextLine().trim();
+        System.out.println("Mau ubah stok barang? (y/n)");
+        String jawab = scanner.nextLine();
+
+        if (jawab.equalsIgnoreCase("y")) {
+            System.out.println("Tambah (t) atau kurangi (k)?");
+            String pilih = scanner.nextLine();
+
+            if (pilih.equalsIgnoreCase("t")) {
+                System.out.println("Tambah berapa?");
+                int jml = scanner.nextInt();
+                b1.tambahStok(jml);
+            } else if (pilih.equalsIgnoreCase("k")) {
+                System.out.println("Kurangi berapa?");
+                int jml = scanner.nextInt();
+                b1.kurangiStok(jml);
             }
-                System.out.println("Masukkan nama barang:");
-            String namaBarang = scanner.nextLine().trim();
-            System.out.println("Masukkan jumlah stok:");
-
-
-        }  else {
-            System.out.println("Terima kasih telah menggunakan aplikasi kami!");
         }
-
-
-
     }
 }
+
+//copyright yuukey-z 2025

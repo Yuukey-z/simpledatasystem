@@ -22,6 +22,36 @@ public class Barang {
         System.out.println("Stok        : " + stokBarang);
         System.out.println("Merek Barang: " + merkBarang);
         System.out.println("Berat       : " + beratBarang +"g");
+        System.out.println("Total Harga : Rp" + hitungTotalHarga());
         System.out.println("-----------------------------");
     }
+
+    // Menambah stok
+    public void tambahStok(int jumlah) {
+        if (jumlah > 0) {
+            stokBarang += jumlah;
+            System.out.println("Stok berhasil ditambah. Stok terbaru: " + stokBarang);
+        } else {
+            System.out.println("ERROR: jumlah harus lebih dari 0!");
+        }
+    }
+
+    // Mengurangi stok
+    public void kurangiStok(int jumlah) {
+        if (jumlah > 0 && jumlah <= stokBarang) {
+            stokBarang -= jumlah;
+            System.out.println("Stok berhasil dikurangi. Sisa stok: " + stokBarang);
+        } else if (jumlah > stokBarang) {
+            System.out.println("ERROR: Stok tidak cukup!");
+        } else {
+            System.out.println("ERROR: jumlah harus lebih dari 0!");
+        }
+    }
+
+    // Menghitung total harga berdasarkan stok
+    public double hitungTotalHarga() {
+        return hargaBarang * stokBarang;
+    }
 }
+
+//copyright yuukey-z 2025
